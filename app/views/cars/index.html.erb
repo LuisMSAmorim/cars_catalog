@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cars</h1>
+<h1 class="tittle">Carros disponíveis</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Brand</th>
+      <th>Modelo</th>
+      <th>Marca</th>
       <th>Color</th>
       <th>Year</th>
       <th>Value</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td><%= car.name %></td>
+        <td><%= car.model %></td>
         <td><%= car.brand %></td>
         <td><%= car.color %></td>
         <td><%= car.year %></td>
