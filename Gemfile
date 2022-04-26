@@ -10,6 +10,8 @@ gem 'sqlite3'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
