@@ -4,5 +4,5 @@ class Car < ApplicationRecord
     validates :brand, presence: true
     validates :color, presence: true
     validates :year, presence: true
-    validates :price, presence: true
+    validates :value, presence: true
 end
