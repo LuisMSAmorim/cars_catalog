@@ -1,7 +1,7 @@
 <%= form_with(model: car, local: true) do |form| %>
   <% if car.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+      <h2><%= pluralize(car.errors.count, "erro") %> não permitiu esse carro de ser salvo:</h2>
 
       <ul>
       <% car.errors.full_messages.each do |message| %>

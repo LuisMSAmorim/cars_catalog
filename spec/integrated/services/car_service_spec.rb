@@ -8,6 +8,7 @@ RSpec.describe CarService, type: :service do
     end
 
     describe '#create' do
+        
         it 'should create a new car' do
             params = { model: 'Palio', brand: 'Fiat', color: 'Blue', year: 2007, value: 1222.21 }
 
