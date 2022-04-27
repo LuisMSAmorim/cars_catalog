@@ -78,4 +78,34 @@ RSpec.describe CarsController, type: :controller do
             expect(response).to redirect_to(car_path(Car.last))
         end
     end
+
+    describe 'PATCH#update' do
+            
+        before do
+            patch :update, params: { id: car.id, car: { model: 'Ranger', brand: 'Ford', color: 'BLue', year: 2018, value: 1000000.21 } }
+        end
+
+        it 'should return status code 302' do
+            expect(response.status).to eq(302)
+        end
+
+        it 'should redirect to show page' do
+            expect(response).to redirect_to(car_path(car))
+        end
+    end
+
+    describe 'DELETE#destroy' do
+                
+        before do
+            delete :destroy, params: { id: car.id }
+        end
+
+        it 'should return status code 302' do
+            expect(response.status).to eq(302)
+        end
+
+        it 'should redirect to show page' do
+            expect(response).to redirect_to(cars_path)
+        end
+    end
 end 
