@@ -63,4 +63,19 @@ RSpec.describe CarsController, type: :controller do
             expect(response).to render_template(:edit)
         end
     end
+
+    describe 'POST#create' do
+            
+        before do
+            post :create, params: { car: { model: 'Amarok', brand: 'Volkswagen', color: 'White', year: 2016, value: 1000000.21 } }
+        end
+
+        it 'should return status code 302' do
+            expect(response.status).to eq(302)
+        end
+
+        it 'should redirect to show page' do
+            expect(response).to redirect_to(car_path(Car.last))
+        end
+    end
 end 
