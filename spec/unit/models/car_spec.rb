@@ -17,6 +17,10 @@ RSpec.describe Car, type: :model do
         end
 
         describe 'year' do
+            it { is_expected.to validate_presence_of(:year) }
+        end
+
+        describe 'value' do
             it { is_expected.to validate_presence_of(:value) }
         end
     end
