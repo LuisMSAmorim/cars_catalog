@@ -1,4 +1,4 @@
-class Carservice < ApplicationService
+class CarService < ApplicationService
 
     def create(params:)
         car = Car.new(params)
@@ -6,18 +6,18 @@ class Carservice < ApplicationService
 
     def update(car_id:, params:)
         car = find_car(car_id)
-        car.assing_attributes(params)
+        car.assign_attributes(params)
         car
     end
 
-    def destroy
+    def destroy(car_id:)
         car = find_car(car_id)
         car.destroy
     end
 
     private
 
-    def find_car(car_id:)
-        Car.find_by(car_id)
+    def find_car(car_id)
+        Car.find_by(id: car_id)
     end
 end

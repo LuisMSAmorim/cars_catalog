@@ -1,3 +1,3 @@
-class AplicationService 
+class ApplicationService
 
 end
