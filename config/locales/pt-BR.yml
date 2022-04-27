@@ -7,6 +7,17 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    attributes:
+      car:
+        model: 'Modelo'
+        brand: 'Marca'
+        color: 'Cor'
+        year: 'Ano'
+        value: 'Valor'
+    models:
+      car:
+        one: 'carro'
+        other: 'Carros'
   date:
     abbr_day_names:
     - dom
@@ -222,6 +233,17 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
   cars:
+    cars: 'Carros'
     car: 'carro'
-    new_car: 'Novo carro'
-    create_car: 'Criar carro'
+    new: 'Novo carro'
+    create: 'Criar carro'
+    model: 'Modelo'
+    brand: 'Marca'
+    color: 'Cor'
+    year: 'Ano'
+    value: 'Valor'
+  menu:
+    back: 'Voltar'
+    show: 'Exibir'
+    destroy: 'Deletar'
+    edit: 'Editar'

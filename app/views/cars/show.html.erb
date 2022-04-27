@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Modelo:</strong>
+  <strong><%= I18n.t('cars.model') %>:</strong>
   <%= @car.model %>
 </p>
 
 <p>
-  <strong>Brand:</strong>
+  <strong><%= I18n.t('cars.brand') %>:</strong>
   <%= @car.brand %>
 </p>
 
 <p>
-  <strong>Color:</strong>
+  <strong><%= I18n.t('cars.color') %>:</strong>
   <%= @car.color %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong><%= I18n.t('cars.year') %>:</strong>
   <%= @car.year %>
 </p>
 
 <p>
-  <strong>Value:</strong>
+  <strong><%= I18n.t('cars.value') %>:</strong>
   <%= @car.value %>
 </p>
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+<%= link_to I18n.t('menu.edit'), edit_car_path(@car), class: "btn btn-warning" %> |
+<%= link_to I18n.t('menu.back'), cars_path, class: "btn btn-primary" %>
