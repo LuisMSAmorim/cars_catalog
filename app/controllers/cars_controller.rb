@@ -21,7 +21,7 @@ class CarsController < ApplicationController
 
   # POST /cars or /cars.json
   def create
-    @car = Car.new(car_params)
+    @car = cars_service.create(params: car_params)
 
     respond_to do |format|
       if @car.save
@@ -36,8 +36,10 @@ class CarsController < ApplicationController
 
   # PATCH/PUT /cars/1 or /cars/1.json
   def update
+    @car = cars_service.update(car_id: @car.id, params: car_params)
+
     respond_to do |format|
-      if @car.update(car_params)
+      if @car.save
         format.html { redirect_to car_url(@car), notice: "Car was successfully updated." }
         format.json { render :show, status: :ok, location: @car }
       else
@@ -49,7 +51,7 @@ class CarsController < ApplicationController
 
   # DELETE /cars/1 or /cars/1.json
   def destroy
-    @car.destroy
+    @car = cars_service.destroy(car_id: @car.id)
 
     respond_to do |format|
       format.html { redirect_to cars_url, notice: "Car was successfully destroyed." }
@@ -66,5 +68,9 @@ class CarsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def car_params
       params.require(:car).permit(:model, :brand, :color, :year, :value)
+    end
+
+    def cars_service 
+      @cars_service ||= CarService.new
     end
 end
