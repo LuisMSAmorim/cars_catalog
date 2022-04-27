@@ -242,6 +242,7 @@ pt-BR:
     color: 'Cor'
     year: 'Ano'
     value: 'Valor'
+    image: 'Imagem'
   menu:
     back: 'Voltar'
     show: 'Exibir'
