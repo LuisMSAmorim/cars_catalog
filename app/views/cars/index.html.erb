@@ -18,20 +18,20 @@
       <% if @cars.count < 1 %>
         <h2><%= I18n.t('cars.no_cars') %></h2>
       <% else %>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.model %></td>
-        <td><%= car.brand %></td>
-        <td><%= car.color %></td>
-        <td><%= car.year %></td>
-        <td><%= car.value %></td>
-        <% if user_signed_in? %>
-          <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
-          <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
-          <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
+        <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.model %></td>
+            <td><%= car.brand %></td>
+            <td><%= car.color %></td>
+            <td><%= car.year %></td>
+            <td><%= car.value %></td>
+            <% if user_signed_in? %>
+              <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
+              <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
+              <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
+            <% end %>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
       <% end %>
   </tbody>
 </table>
