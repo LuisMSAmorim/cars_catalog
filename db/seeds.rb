@@ -3,4 +3,4 @@
 #
 # Examples:
 #
-  User.create(email: 'admin@admin.com', password: 'admin', password_confirmation: 'admin')
+  User.create(email: 'admin@admin.com', password: 'admin0!@', password_confirmation: 'admin0!@')
