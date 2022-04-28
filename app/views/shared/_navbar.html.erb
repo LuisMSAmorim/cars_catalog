@@ -2,5 +2,8 @@
     <%= menu_group do %>
         <%= menu_item "Home", root_path %>
         <%= menu_item "Carros", cars_path %>
+        <% if user_signed_in? %>
+            <%= menu_item "Sair", destroy_user_session_path, method: :destroy %>
+        <% end %>
     <% end %>
 <% end %>

@@ -22,9 +22,11 @@
         <td><%= car.color %></td>
         <td><%= car.year %></td>
         <td><%= car.value %></td>
-        <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
-        <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
-        <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
+          <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
+          <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,6 @@
 
 <br>
 
-<%= link_to I18n.t('cars.new'), new_car_path, class: 'btn btn-primary' %>
+<% if user_signed_in? %>
+  <%= link_to I18n.t('cars.new'), new_car_path, class: 'btn btn-primary' %>
+<% end %>
