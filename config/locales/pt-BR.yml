@@ -242,6 +242,7 @@ pt-BR:
     color: 'Cor'
     year: 'Ano'
     value: 'Valor'
+    no_cars: 'Não há carros registrados'
   menu:
     back: 'Voltar'
     show: 'Exibir'
