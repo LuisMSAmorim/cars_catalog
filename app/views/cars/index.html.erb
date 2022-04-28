@@ -16,7 +16,6 @@
   </thead>
 
   <tbody>
-<<<<<<< HEAD
       <% if @cars.count < 1 %>
         <h2><%= I18n.t('cars.no_cars') %></h2>
       <% else %>
@@ -35,21 +34,6 @@
           </tr>
         <% end %>
       <% end %>
-=======
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.model %></td>
-        <td><%= car.brand %></td>
-        <td><%= car.color %></td>
-        <td><%= car.year %></td>
-        <td><%= car.value %></td>
-        <td><%= image_tag(car.image_url(:thumb).to_s) %></td>
-        <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
-        <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
-        <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
->>>>>>> 278fc89cf0d443765c939dd3c3bab66b5c8201d8
   </tbody>
 </table>
 
