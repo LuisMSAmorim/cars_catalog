@@ -1,35 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="tittle">Carros disponíveis</h1>
+<h1><%= I18n.t('cars.cars') %></h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Modelo</th>
-      <th>Marca</th>
-      <th>Color</th>
-      <th>Year</th>
-      <th>Value</th>
+      <th><%= I18n.t('cars.model') %></th>
+      <th><%= I18n.t('cars.brand') %></th>
+      <th><%= I18n.t('cars.color') %></th>
+      <th><%= I18n.t('cars.year') %></th>
+      <th><%= I18n.t('cars.value') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= car.model %></td>
-        <td><%= car.brand %></td>
-        <td><%= car.color %></td>
-        <td><%= car.year %></td>
-        <td><%= car.value %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <% if @cars.count < 1 %>
+        <h2><%= I18n.t('cars.no_cars') %></h2>
+      <% else %>
+        <% @cars.each do |car| %>
+          <tr>
+            <td><%= car.model %></td>
+            <td><%= car.brand %></td>
+            <td><%= car.color %></td>
+            <td><%= car.year %></td>
+            <td><%= car.value %></td>
+            <% if user_signed_in? %>
+              <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
+              <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
+              <td><%= link_to I18n.t('menu.destroy'), car, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-danger' %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Car', new_car_path %>
+<% if user_signed_in? %>
+  <%= link_to I18n.t('cars.new'), new_car_path, class: 'btn btn-primary' %>
+<% end %>
