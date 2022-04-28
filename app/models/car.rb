@@ -5,4 +5,6 @@ class Car < ApplicationRecord
     validates :color, presence: true
     validates :year, presence: true
     validates :value, presence: true
+
+    mount_uploader :image, ImageUploader
 end

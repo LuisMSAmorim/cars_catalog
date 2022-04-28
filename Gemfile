@@ -10,6 +10,10 @@ gem 'sqlite3'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'carrierwave', '~> 2.0'
+
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
+
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 gem 'pg', '~> 0.18.4'
