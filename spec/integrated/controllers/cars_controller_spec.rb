@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe CarsController, type: :controller do
 
     let(:car) { Car.create(model: 'Fiesta', brand: 'Ford', color: 'Red', year: 2015, value: 10000.21) }
+    let(:user) { User.create(email: 'admin@admin.com', password: 'admin0!@', password_confirmation: 'admin0!@') }
 
     describe 'GET#index' do
         
@@ -22,6 +23,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'GET#new' do
         
         before do
+            sign_in user
             get :new
         end
 
@@ -37,6 +39,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'GET#show' do
         
         before do
+            sign_in user
             get :show, params: { id: car.id }
         end
 
@@ -52,6 +55,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'GET#edit' do
         
         before do
+            sign_in user
             get :edit, params: { id: car.id }
         end
 
@@ -67,6 +71,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'POST#create' do
             
         before do
+            sign_in user
             post :create, params: { car: { model: 'Amarok', brand: 'Volkswagen', color: 'White', year: 2016, value: 1000000.21 } }
         end
 
@@ -82,6 +87,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'PATCH#update' do
             
         before do
+            sign_in user
             patch :update, params: { id: car.id, car: { model: 'Ranger', brand: 'Ford', color: 'BLue', year: 2018, value: 1000000.21 } }
         end
 
@@ -97,6 +103,7 @@ RSpec.describe CarsController, type: :controller do
     describe 'DELETE#destroy' do
                 
         before do
+            sign_in user
             delete :destroy, params: { id: car.id }
         end
 
