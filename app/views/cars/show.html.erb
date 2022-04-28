@@ -24,6 +24,10 @@
   <strong><%= I18n.t('cars.value') %>:</strong>
   <%= @car.value %>
 </p>
+<p>
+  <strong><%= I18n.t('cars.image') %>:</strong>
+  <%= image_tag(@car.image_url(:thumb).to_s) %>
+</p>
 
 <%= link_to I18n.t('menu.edit'), edit_car_path(@car), class: "btn btn-warning" %> |
 <%= link_to I18n.t('menu.back'), cars_path, class: "btn btn-primary" %>

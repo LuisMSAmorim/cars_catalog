@@ -243,6 +243,7 @@ pt-BR:
     year: 'Ano'
     value: 'Valor'
     no_cars: 'Não há carros registrados'
+    image: 'Imagem'
   menu:
     back: 'Voltar'
     show: 'Exibir'
