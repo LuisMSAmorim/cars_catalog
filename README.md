@@ -11,7 +11,7 @@
 ### Clone the project:
 
 ``` bash 
-    git clone git@github.com:LuisMSAmorim/cars_crud.git
+    git clone git@github.com:LuisMSAmorim/cars_catalog.git
 ```
 
 ### Build project container:
