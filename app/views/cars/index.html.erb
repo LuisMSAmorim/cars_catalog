@@ -26,6 +26,7 @@
             <td><%= car.color %></td>
             <td><%= car.year %></td>
             <td><%= car.value %></td>
+            <td><%= image_tag(car.image_url(:thumb).to_s) %></td>
             <% if user_signed_in? %>
               <td><%= link_to I18n.t('menu.show'), car, class: 'btn btn-primary'%></td>
               <td><%= link_to I18n.t('menu.edit'), edit_car_path(car), class: 'btn btn-warning' %></td>
